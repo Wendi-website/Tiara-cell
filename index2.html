@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Harga Pulsa 3D - Tiara Cell</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+
+    <style>   
+body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(120deg, #1E90FF , #F5F5F5); /* biru laut dan Putih Susu */
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            perspective: 1000px;
+        }
+
+        .container {
+            width:65%;
+            max-width: 800px;
+            background: #282828;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            color: #e6e6e6;
+            font-weight: bold;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            position: relative;
+            display: inline-block;
+            animation: animate3D 5s infinite ease-in-out;
+        }
+
+        /* Efek 3D pada teks */
+        header h1::before,
+        header h1::after {
+            content: "Daftar Harga Pulsa";
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #1a73e8;
+            transform: translateZ(-20px);
+            opacity: 0.7;
+            filter: blur(4px);
+        }
+
+        header h1::after {
+            color: #ffcc00;
+            transform: translateZ(20px);
+            opacity: 0.5;
+        }
+
+        /* Animasi untuk teks 3D */
+        @keyframes animate3D {
+            0% {
+                transform: rotateY(0deg) rotateX(0deg);
+            }
+            25% {
+                transform: rotateY(15deg) rotateX(5deg);
+            }
+            50% {
+                transform: rotateY(0deg) rotateX(0deg);
+            }
+            75% {
+                transform: rotateY(-15deg) rotateX(-5deg);
+            }
+            100% {
+                transform: rotateY(0deg) rotateX(0deg);
+            }
+        }
+
+
+        /* CSS untuk tampilan yang lebih mewah dengan animasi 3D */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(120deg, #1E90FF , #F5F5F5); /* biru laut dan Putih Susu */
+            color: #fff;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            perspective: 1000px;
+        }
+
+        .container {
+            width: 65%;
+            max-width: 800px;
+            background: #282828;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            transform-style: preserve-3d;
+            transform: rotateY(0deg);
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .container:hover {
+            transform: rotateY(15deg) rotateX(5deg);
+        }
+
+        header h1 {
+            font-size: 2rem;
+            text-align: center;
+            color: #e6e6e6;
+            font-weight: bold;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            transform: translateZ(30px);
+        }
+
+        .content {
+            text-align: center;
+            transform: translateZ(20px);
+        }
+
+        .card {
+            background: #333;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown .dropbtn {
+            background: #e6b800;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            width: 100%;
+        }
+
+        .dropdown .dropbtn:hover {
+            background: #ffcc00;
+        }
+
+        .provider {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .provider-btn {
+            background-color: #1a73e8;
+            color: #fff;
+            padding: 8px 15px;
+            font-size: 1rem;
+            margin: 5px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .provider-btn:hover {
+            background-color: #4285f4;
+        }
+
+        .price-table {
+            width: 100%;
+            margin-top: 15px;
+            border-collapse: collapse;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .price-table th, .price-table td {
+            padding: 12px 8px;
+            border: 1px solid #555;
+            text-align: left;
+            transform: translateZ(15px);
+        }
+
+        .price-table th {
+            background: #444;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .price-table tr:nth-child(even) {
+            background: #383838;
+        }
+
+        .price-table tr:nth-child(odd) {
+            background: #333;
+        }
+
+        .price-table td {
+            color: #e6e6e6;
+        }
+
+        /* Animasi hover untuk efek transisi */
+        .price-table tr {
+            transition: background 0.3s ease;
+            transform: translateZ(10px);
+        }
+
+        .price-table tr:hover {
+            background-color: #555;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+        <h1>Daftar Harga Pulsa</h1>
+        </header>
+
+        <div class="content">
+            <div class="card">
+                <div class="dropdown">
+                    <button class="dropbtn">Pulsa Reguler</button>
+                </div>
+                
+                <div class="provider">
+                    <button class="provider-btn" onclick="filterProvider('AXIS')">AXIS</button>
+                    <button class="provider-btn" onclick="filterProvider('INDOSAT')">INDOSAT</button>
+                    <button class="provider-btn" onclick="filterProvider('SMARTFREN')">SMARTFREN</button>
+                    <button class="provider-btn" onclick="filterProvider('TELKOMSEL')">TELKOMSEL</button>
+                    <button class="provider-btn" onclick="filterProvider('XL')">XL</button>
+                </div>
+                
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Note</th>
+                            <th>Harga Basic</th>
+                            <th>Harga Premium</th>
+                        </tr>
+                    </thead>
+                    <tbody id="priceTableBody">
+                        <!-- AXIS -->
+                        <tr class="AXIS">
+                            <td>Axis 10.000</td>
+                            <td>Pulsa Axis Rp 10.000</td>
+                            <td>Rp12.000</td>
+                            <td>Rp13.000</td>
+                        </tr>
+
+                        <!-- INDOSAT -->
+                        <tr class="INDOSAT">
+                            <td>Indosat 30.000</td>
+                            <td>Pulsa Indosat Rp30.000</td>
+                            <td>Rp32.000</td>
+                            <td>Rp33.000</td>
+                        </tr>
+
+                        <!-- SMARTFREN -->
+                        <tr class="SMARTFREN">
+                            <td>Smartfren 25.000</td>
+                            <td>Pulsa Smartfren Rp25.000</td>
+                            <td>Rp26.000</td>
+                            <td>Rp27.000</td>
+                        </tr>
+
+                        <!-- TELKOMSEL -->
+                        <tr class="TELKOMSEL">
+                            <td>Telkomsel 50.000</td>
+                            <td>Pulsa Telkomsel Rp 50.000</td>
+                            <td>Rp52.000</td>
+                            <td>Rp53.000</td>
+                        </tr>
+
+                        <!-- XL -->
+                        <tr class="XL">
+                            <td>XL 25.000</td>
+                            <td>Pulsa XL Rp 25.000</td>
+                            <td>Rp27.000</td>
+                            <td>Rp28.000</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript untuk filter provider
+        function filterProvider(provider) {
+            const rows = document.querySelectorAll("#priceTableBody tr");
+            rows.forEach(row => {
+                if (row.classList.contains(provider)) {
+                    row.classList.remove("hidden");
+                } else {
+                    row.classList.add("hidden");
+                }
+            });
+        }
+
+        function showAllData() {
+            const rows = document.querySelectorAll("#priceTableBody tr");
+            rows.forEach(row => row.classList.remove("hidden"));
+        }
+
+        document.addEventListener("DOMContentLoaded", showAllData);
+    </script>
+    <a href="index.html" style="font-size: 16px; text-decoration: none; color: #007BFF;">
+        Kembali ke Home
+    </a>
+    
+</body>
+</html>
